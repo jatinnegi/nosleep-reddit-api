@@ -1,1 +1,1 @@
-https://github.com/jatinnegi/nosleep-reddit-api.git
+https://nosleep-reddit-api.herokuapp.com/
