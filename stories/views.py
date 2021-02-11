@@ -44,3 +44,7 @@ def search(request):
         return JsonResponse(submissions, safe=False)
 
     return JsonResponse({}, safe=False)
+
+
+def not_found(request):
+    return render(request, "stories/not_found.html", {})
