@@ -26,7 +26,7 @@ loadMoreBtn.onclick = function () {
 
   let sort = sortBy.length === 0 ? "hot" : sortBy;
 
-  fetch(`http://localhost:8000/${sort}/${currentPage}/`)
+  fetch(`https://nosleep-reddit-api.herokuapp.com/${sort}/${currentPage}/`)
     .then((res) => res.json())
     .then((sumbissions) => {
       document.getElementById("btn-text").classList.remove("hide");
@@ -51,7 +51,7 @@ hotSubmissions.onclick = function () {
   sortBy = "hot";
   currentPage = 1;
 
-  URL = `http://localhost:8000/${sortBy}/${currentPage}/`;
+  URL = `https://nosleep-reddit-api.herokuapp.com/${sortBy}/${currentPage}/`;
 
   fetch(URL)
     .then((res) => res.json())
@@ -81,7 +81,7 @@ newSubmissions.onclick = function () {
   sortBy = "new";
   currentPage = 1;
 
-  URL = `http://localhost:8000/${sortBy}/${currentPage}/`;
+  URL = `https://nosleep-reddit-api.herokuapp.com/${sortBy}/${currentPage}/`;
 
   fetch(URL)
     .then((res) => res.json())
@@ -109,7 +109,7 @@ topSubmissions.onclick = function () {
   sortBy = "top";
   currentPage = 1;
 
-  URL = `http://localhost:8000/${sortBy}/${currentPage}/`;
+  URL = `https://nosleep-reddit-api.herokuapp.com/${sortBy}/${currentPage}/`;
 
   fetch(URL)
     .then((res) => res.json())
@@ -141,7 +141,7 @@ function getSearchSubmissions(search, page) {
 
   let csrftoken = getCookie("csrftoken");
 
-  fetch(`http://localhost:8000/search/`, {
+  fetch(`https://nosleep-reddit-api.herokuapp.com/search/`, {
     method: "POST",
     mode: "cors",
     cache: "no-cache",
@@ -200,7 +200,7 @@ function getCookie(name) {
 
 function createSubmission(submission) {
   const submissionEl = document.createElement("a");
-  submissionEl.href = `http://localhost:8000/submission/${submission.id}/`;
+  submissionEl.href = `https://nosleep-reddit-api.herokuapp.com/${submission.id}/`;
   submissionEl.classList.add("submission-link");
 
   submissionEl.innerHTML = `
