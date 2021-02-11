@@ -141,7 +141,7 @@ function getSearchSubmissions(search, page) {
 
   let csrftoken = getCookie("csrftoken");
 
-  fetch(`https://nosleep-reddit-api.herokuapp.com/search/`, {
+  fetch(`http://nosleep-reddit-api.herokuapp.com/search/`, {
     method: "POST",
     // credentials: "include",
     // mode: "cors",
