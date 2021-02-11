@@ -143,7 +143,7 @@ function getSearchSubmissions(search, page) {
 
   fetch(`https://nosleep-reddit-api.herokuapp.com/search/`, {
     method: "POST",
-    credentials: "include",
+    credentials: "omit",
     // mode: "cors",
     // cache: "no-cache",
     headers: {
