@@ -180,7 +180,7 @@ function getSearchSubmissions(search, page) {
           createSubmission(submission);
         });
       }
-    });
+    }).catch(err => console.log(err));
 }
 
 function getCookie(name) {
