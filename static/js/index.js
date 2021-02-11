@@ -143,7 +143,7 @@ function getSearchSubmissions(search, page) {
 
   fetch(`https://nosleep-reddit-api.herokuapp.com/search/`, {
     method: "POST",
-    // credentials: "omit",
+    // credentials: "include",
     // mode: "cors",
     // cache: "no-cache",
     headers: {
@@ -151,7 +151,7 @@ function getSearchSubmissions(search, page) {
       "X-CSRFToken": csrftoken,
     },
     // redirect: "follow",
-    // referrerPolicy: "no-referrer",
+    referrerPolicy: "same-origin",
     body,
   })
     .then((res) => res.json())
@@ -182,7 +182,8 @@ function getSearchSubmissions(search, page) {
           createSubmission(submission);
         });
       }
-    });
+    })
+    .catch((err) => console.log(err));
 }
 
 function getCookie(name) {
