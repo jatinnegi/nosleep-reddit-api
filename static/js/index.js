@@ -180,7 +180,7 @@ function getSearchSubmissions(search, page) {
           createSubmission(submission);
         });
       }
-    }).catch(err => console.log(err));
+    });
 }
 
 function getCookie(name) {
@@ -200,7 +200,7 @@ function getCookie(name) {
 
 function createSubmission(submission) {
   const submissionEl = document.createElement("a");
-  submissionEl.href = `https://nosleep-reddit-api.herokuapp.com/${submission.id}/`;
+  submissionEl.href = `https://nosleep-reddit-api.herokuapp.com/submission/${submission.id}/`;
   submissionEl.classList.add("submission-link");
 
   submissionEl.innerHTML = `
