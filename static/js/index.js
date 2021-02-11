@@ -144,14 +144,14 @@ function getSearchSubmissions(search, page) {
   fetch(`https://nosleep-reddit-api.herokuapp.com/search/`, {
     method: "POST",
     credentials: "same-origin",
-    mode: "cors",
-    cache: "no-cache",
+    // mode: "cors",
+    // cache: "no-cache",
     headers: {
       "Content-Type": "application/json",
       "X-CSRFToken": csrftoken,
     },
-    redirect: "follow",
-    referrerPolicy: "no-referrer",
+    // redirect: "follow",
+    // referrerPolicy: "no-referrer",
     body,
   })
     .then((res) => res.json())
