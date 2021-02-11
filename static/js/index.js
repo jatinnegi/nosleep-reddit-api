@@ -144,7 +144,7 @@ function getSearchSubmissions(search, page) {
   fetch(`https://nosleep-reddit-api.herokuapp.com/search/`, {
     method: "POST",
     // credentials: "include",
-    mode: "same-origin",
+    // mode: "cors",
     // cache: "no-cache",
     headers: {
       "Content-Type": "application/json",
@@ -185,7 +185,7 @@ function getSearchSubmissions(search, page) {
     })
     .catch((err) => {
       console.log("some error...");
-      console.log(err.response);
+      console.log(err);
     });
 }
 
