@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #040804;
+  color: #f1f1f1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  font-family: "Creepster", sans-serif;
+  font-size: 36px;
+  background: #a4031f;
+  height: 65px;
+  width: 100vw;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.container {
+  width: 90%;
+  margin: 80px auto 25px auto;
+}
+
+.submission-link {
+  text-decoration: none;
+  color: #fff;
+}
+.submission {
+  background: #252627;
+  margin: 20px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px #333;
+  cursor: pointer;
+}
+
+.submission:hover {
+  box-shadow: 1px 1px 20px #333;
+}
+
+.submission * {
+  margin: 8px 0;
+}
+
+.submission-title {
+  position: relative;
+  line-height: 1.5em;
+  margin: 15px 0;
+}
+
+.detail {
+  position: relative;
+  font-size: 12px;
+}
+
+.submission .score {
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.detail::before,
+.submission-title::before,
+.score::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #3a3a3a;
+  display: none;
+}
+
+#submissions.submissions-loading a div *::before {
+  display: block;
+}
+
+.flair {
+  background: #3a3a3a;
+  font-size: 12px;
+  margin-right: 5px;
+  padding: 4px 7px;
+  border-radius: 25px;
+  font-family: monospace;
+}
+
+#load-more {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#load-more-btn {
+  background: none;
+  height: 40px;
+  width: 105px;
+  border: 1px solid #a4031f;
+  outline: none;
+  color: #a4031f;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.submission-container {
+  margin: 65px 0;
+  padding: 30px 15px;
+}
+
+.submission-container .flair {
+  display: inline-block;
+}
+
+.submission-container * {
+  margin-bottom: 20px;
+}
+
+.submission-container .selftext {
+  margin: 50px 0;
+}
+
+.submission-container .selftext p {
+  line-height: 1.6em;
+}
+
+.hide {
+  display: none;
+}
+
+.controls {
+  background: #252627;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px #333;
+}
+
+.controls span {
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 20px;
+}
+
+.search-input {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px #333;
+}
+
+.search-input .search-icon {
+  position: absolute;
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input .search-icon i {
+  font-size: 16px;
+  color: #f1f1f1;
+  background: none;
+}
+
+#submission-search {
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px #333;
+  padding-left: 35px;
+  width: 100%;
+  background: #252627;
+  color: #fff;
+}
+
+.paragraph {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.selected {
+  background: #333;
+}
+
+@media only screen and (min-width: 900px) {
+  .container {
+    width: 65%;
+  }
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %} {% if submission|length == 0 %}
+<h1>Error 404. No Submission Found.</h1>
+{%else%}
+<div class="submission-container">
+  <h3>{{ submission.title }}</h3>
+  {% if submission.flair %}
+  <span class="flair">{{ submission.flair }}</span>
+  {% endif %}
+  <div class="detail">
+    <p>
+      Posted By: u/{{submission.author}}&nbsp;&nbsp;&nbsp;
+      {{submission.posted_on }}
+    </p>
+  </div>
+  <div class="selftext">
+    {% for paragraph in submission.selftext %}
+    <p class="paragraph">{{paragraph}}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endif %} {% endblock %}

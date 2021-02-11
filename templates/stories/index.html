@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="controls">
+    <span id="hot-submissions">
+        <i class="fab fa-hotjar"></i><span style="display:inline; font-size: 14px; margin-right:0px">Hot</span>
+    </span>
+    <span id="new-submissions">
+        <i class="fas fa-certificate"></i><span style="display:inline; font-size: 14px; margin-right:0px">New</span>
+    </span>
+    <span id="top-submissions">
+        <i class="fas fa-signal"></i><span style="display:inline; font-size: 14px; margin-right:0px">Top</span>
+    </span>
+</div>
+<div class="search-input">
+  <div class="search-icon">
+    <i class="fas fa-search"></i>
+  </div>
+  <input type="text" id="submission-search" placeholder="Search"/>
+</div>
+<div id="submissions">
+{% for submission in submissions %}
+  <a class="submission-link" href="{% url 'stories:submission' submission.id %}">
+  <div class="submission">
+    <div class="detail">
+      <p>
+        Posted By: u/{{submission.author}}&nbsp;&nbsp;&nbsp;
+        {{submission.posted_on }}
+      </p>
+    </div>
+    <h4 class="submission-title">
+      {% if submission.flair %}
+      <span class="flair">{{ submission.flair }}</span>
+      {% endif %} {{submission.title}}
+    </h4>
+    <p class="score">Upvotes: {{submission.score}}</p>
+  </div>
+  </a>
+  {% endfor %}
+</div>
+<div id="load-more">
+  <button id="load-more-btn">
+    <img
+      id="spinner"
+      src="{% static 'images/spinner.gif' %}"
+      alt=""
+      class="hide"
+      style="height: 25px"
+    />
+    <span id="btn-text">Load More<span />
+  </button>
+</div>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+  crossorigin="anonymous"
+></script>
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock content %}
