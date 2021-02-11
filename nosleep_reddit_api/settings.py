@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'c+6+l9&i$6+@cp_y6+0f0ip^0#87)%u++s+m(*qrwx!u6j1s(z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Application definition
 
@@ -24,7 +24,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'stories.apps.StoriesConfig',
 ]
 
@@ -32,7 +31,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -118,9 +116,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
                  'nosleep-reddit-api.herokuapp.com']
-CORS_ALLOWED_ORIGINS = [
-    "https://nosleep-reddit-api.herokuapp.com",
-    "http://nosleep-reddit-api.herokuapp.com",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000"
-]
