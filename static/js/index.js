@@ -147,7 +147,7 @@ function getSearchSubmissions(search, page) {
     // cache: "no-cache",
     // credentials: "same-origin",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "text/plain",
       "X-CSRFToken": csrftoken,
     },
     // redirect: "follow",
