@@ -169,6 +169,8 @@ function getSearchSubmissions(search, page) {
         document.getElementById("spinner").classList.add("hide");
       }
 
+      loadMoreBtn.classList.remove("hide");
+
       if (submissions.length === 0) {
         if (page === 1) {
           allSubmissionsDiv.innerHTML =
